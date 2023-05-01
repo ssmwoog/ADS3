@@ -20,7 +20,7 @@ public class MyHashTable<K, V> {
 
     private HashNode<K, V>[] chaarr;
     private int size;
-    private int m = 11;
+    private int m = 100;
 
     private int hash(K key) {
         return Objects.hash(key) % m;
@@ -143,7 +143,7 @@ public class MyHashTable<K, V> {
                 bucksize++;
                 node = node.next;
             }
-            System.out.println("Bucket " + i + " contains " + bucksize + " elements");
+            System.out.println("Bucket " + i + " - " + bucksize + " elements");
         }
     }
 
