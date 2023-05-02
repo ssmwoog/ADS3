@@ -23,7 +23,7 @@ public class MyHashTable<K, V> {
     private int m = 1000;
 
     private int hash(K key) {
-        return Objects.hash(key) % m;
+        return Math.abs(Objects.hashCode(key)) % m;
     }
 
     public MyHashTable() {
@@ -77,11 +77,17 @@ public class MyHashTable<K, V> {
         }
 
         HashNode<K, V> newnode = new HashNode<K, V>(key, value);
-        newnode.next = chaarr[ind];
-        chaarr[ind] = newnode;
+        if (chaarr[ind] == null) {
+            chaarr[ind] = newnode;
+        } else {
+            HashNode<K, V> last = chaarr[ind];
+            while (last.next != null) {
+                last = last.next;
+            }
+            last.next = newnode;
+        }
         size++;
     }
-
     public V get(K key){
         int Index = hash(key);
         HashNode<K, V> node = chaarr[Index];
