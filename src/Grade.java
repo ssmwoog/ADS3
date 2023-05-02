@@ -1,7 +1,6 @@
-import java.util.Objects;
-
-public class Grade extends Object{
+public class Grade {
     private String g;
+
     public Grade(){}
 
     public Grade(String g){
@@ -15,13 +14,11 @@ public class Grade extends Object{
 
     @Override
     public int hashCode() {
-        String key = String.valueOf(this.g);
-        int code = 0;
-
+        int hash = 0;
+        String key = this.g;
         for (int i = 0; i < key.length(); i++) {
-            code += (int) key.charAt(i);
+            hash = (hash * 31) + key.charAt(i);
         }
-        return code;
+        return hash;
     }
-
 }

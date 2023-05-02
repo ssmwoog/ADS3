@@ -1,4 +1,3 @@
-
 public class Student {
     private String name;
     private String lastName;
@@ -17,11 +16,11 @@ public class Student {
 
     @Override
     public int hashCode() {
-        String key = String.valueOf(this.name + " " + this.lastName);
-        int code = 0;
+        int hash = 0;
+        String key = this.name + " " + this.lastName;
         for (int i = 0; i < key.length(); i++) {
-            code += (int) key.charAt(i);
+            hash = (hash * 31) + key.charAt(i);
         }
-        return code;
+        return hash;
     }
 }

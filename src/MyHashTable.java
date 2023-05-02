@@ -20,7 +20,7 @@ public class MyHashTable<K, V> {
 
     private HashNode<K, V>[] chaarr;
     private int size;
-    private int m = 100;
+    private int m = 1000;
 
     private int hash(K key) {
         return Objects.hash(key) % m;
