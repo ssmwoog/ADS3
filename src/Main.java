@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        MyHashTable<MyTestingClass, Student> table = new MyHashTable<>(1000);
+        MyHashTable<MyTestingClass, Student> table = new MyHashTable<>(11);
         Random random = new Random();
 
         for (int i = 0; i < 10000; i++) {
