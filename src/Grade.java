@@ -14,11 +14,9 @@ public class Grade {
 
     @Override
     public int hashCode() {
-        int hash = 0;
-        String key = this.g;
-        for (int i = 0; i < key.length(); i++) {
-            hash = (hash * 31) + key.charAt(i);
-        }
-        return hash;
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + (( g == null) ? 0 : g.hashCode());
+        return result;
     }
 }

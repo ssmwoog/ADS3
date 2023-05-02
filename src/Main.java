@@ -11,6 +11,6 @@ public class Main {
             table.put(key, value);
         }
 
-        table.printBucketSizes();
+        table.getBucketSizes();
     }
 }

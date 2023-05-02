@@ -141,17 +141,20 @@ public class MyHashTable<K, V> {
         return this.getKey(value) != null;
     }
 
-    public void printBucketSizes() {
+    public int[] getBucketSizes() {
+        int[] sizes = new int[m];
         for (int i = 0; i < m; i++) {
-            int bucksize = 0;
+            int count = 0;
             HashNode<K, V> node = chaarr[i];
             while (node != null) {
-                bucksize++;
+                count++;
                 node = node.next;
             }
-            System.out.println("Bucket " + i + " - " + bucksize + " elements");
+            sizes[i] = count;
         }
+        return sizes;
     }
+
 
     public int size(){
         return size;
